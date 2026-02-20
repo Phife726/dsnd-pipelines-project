@@ -1,4 +1,4 @@
-# Pipeline Project: Clothing Review Recommendation
+# Pipeline Project
 
 This project builds an end-to-end machine learning pipeline to predict whether a customer recommends a clothing product using the `Recommended IND` target variable.
 
@@ -7,7 +7,7 @@ The workflow combines:
 - categorical product metadata (for example division/department/class)
 - free-text review content (`Review Text`) processed with NLP
 
-The implementation is in the notebook at `starter/starter.ipynb` using a scikit-learn `Pipeline` and `ColumnTransformer`.
+The implementation is completed in `starter/starter.ipynb` using a scikit-learn `Pipeline` and `ColumnTransformer` to combine preprocessing and modeling in a reproducible workflow.
 
 ## Getting Started
 
@@ -41,9 +41,9 @@ This repository does not include an automated test suite. Validation is done in 
 - generating predictions on the test split
 - reviewing model performance metrics and outputs in notebook cells
 
-## Project Instructions
+## Project Deliverables
 
-Complete the student deliverables in `starter/starter.ipynb`:
+The submission work is completed in `starter/starter.ipynb`:
 
 1. Load and inspect the dataset from `starter/data/reviews.csv`.
 2. Define features (`X`) and target (`y = Recommended IND`).
