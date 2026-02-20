@@ -1,54 +1,64 @@
-# README Template
+# Pipeline Project: Clothing Review Recommendation
 
-Below is a template provided for use when building your README file for students.
+This project builds an end-to-end machine learning pipeline to predict whether a customer recommends a clothing product using the `Recommended IND` target variable.
 
-# Project Title
+The workflow combines:
+- numeric features (for example `Age`, `Positive Feedback Count`)
+- categorical product metadata (for example division/department/class)
+- free-text review content (`Review Text`) processed with NLP
 
-Project description goes here.
+The implementation is in the notebook at `starter/starter.ipynb` using a scikit-learn `Pipeline` and `ColumnTransformer`.
 
 ## Getting Started
 
-Instructions for how to get a copy of the project running on your local machine.
+These instructions help you run the project locally.
 
 ### Dependencies
 
-```
-Examples here
-```
+Python packages are listed in `requirements.txt`:
+- `scikit-learn`
+- `pandas`
+- `spacy`
+- `notebook`
+
+You also need the spaCy English model:
+- `en_core_web_sm`
 
 ### Installation
 
-Step by step explanation of how to get a dev environment running.
-
-List out the steps
-
-```
-Give an example here
+```bash
+git clone <repository_url>
+cd dsnd-pipelines-project
+python -m pip install -r requirements.txt
+python -m spacy download en_core_web_sm
+jupyter notebook starter/starter.ipynb
 ```
 
 ## Testing
 
-Explain the steps needed to run any automated tests
-
-### Break Down Tests
-
-Explain what each test does and why
-
-```
-Examples here
-```
+This repository does not include an automated test suite. Validation is done in the notebook by:
+- training the pipeline on the training split
+- generating predictions on the test split
+- reviewing model performance metrics and outputs in notebook cells
 
 ## Project Instructions
 
-This section should contain all the student deliverables for this project.
+Complete the student deliverables in `starter/starter.ipynb`:
+
+1. Load and inspect the dataset from `starter/data/reviews.csv`.
+2. Define features (`X`) and target (`y = Recommended IND`).
+3. Split data into training and test sets.
+4. Perform exploratory data analysis (distributions, missing values, class balance).
+5. Build preprocessing pipelines for numeric, categorical, and text columns.
+6. Combine preprocessing with a classifier in a single scikit-learn pipeline.
+7. Train, evaluate, and iterate on the model.
 
 ## Built With
 
-* [Item1](www.item1.com) - Description of item
-* [Item2](www.item2.com) - Description of item
-* [Item3](www.item3.com) - Description of item
-
-Include all items used to build project.
+- [scikit-learn](https://scikit-learn.org/stable/) - ML pipeline construction, preprocessing, and modeling
+- [pandas](https://pandas.pydata.org/) - Data loading and analysis
+- [spaCy](https://spacy.io/) - NLP tokenization/lemmatization for review text
+- [Jupyter Notebook](https://jupyter.org/) - Interactive development environment
 
 ## License
 
